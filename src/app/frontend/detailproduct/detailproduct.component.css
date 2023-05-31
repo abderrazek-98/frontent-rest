@@ -1,0 +1,411 @@
+.background{
+  background-color: black;
+   border-bottom-left-radius: 10%;
+   border-bottom-right-radius: 10%;
+   width: auto;
+   height: 200px;
+
+   margin-left:5%;
+   margin-right: 5%;
+}
+.background .bloc{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+
+
+}
+.bloc .fav{
+
+  margin-top: 11px;
+  margin-left: 21%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+}
+.bloc .fav i{
+  font-size: 28px;
+  color:#FCA850;
+  text-align: center;
+  margin-left: 25%;
+  margin-top: 13px;
+}
+.retour{
+  font-size: 1.5rem;
+    margin-top: 13px;
+ }
+
+ .bloc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.retour {
+  margin-right: auto;
+}
+
+.fav {
+  margin-left: auto;
+}
+ .bloc .products{
+  font-size: 1.5rem;
+ }
+ @media only screen and (min-width: 1500px) {
+  .bloc {
+    flex-direction: column;
+  }
+
+  .retour, .fav {
+    font-size: 1rem;
+  }
+
+  .products {
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  .prix{
+    color: #FCA850;
+    font-size:   100%;
+    font-family: 'Kollektif', sans-serif;
+    margin-top: 10%;
+   }
+
+   #btn{
+
+    margin-bottom: 20%;
+    margin-left: 30%;
+    border-top-left-radius: 40%;
+    border-bottom-right-radius: 40%;
+    background-color: #000000;
+    border: solid 1px transparent;
+   border: none;
+   color: white;
+   cursor: pointer;
+   font-size: 100%;
+
+   width: 50%;
+    height:20%;
+    opacity: 0.9;
+   }
+}
+
+
+
+h3{
+
+   font-family: 'Kollektif', sans-serif;
+   font-weight: bold;
+  color: white;
+  font-size: 204%;
+
+ }
+p{
+   font-family: 'Kollektif', sans-serif;
+  color: white;
+  font-size: 1.5rem;
+ }
+.nom{
+ margin-top: 2%;
+ margin-left: 10%;
+}
+.background img{
+  position: absolute;
+
+  right: -1%;
+  top: 13%;
+  width: 30%;
+  height: 20%;
+  border-radius: 50%;
+}
+
+.detail {
+ color:black;
+ margin-top: 10%;
+ margin-right: 10%;
+ margin-left:10%;
+ font-family: 'Kollektif', sans-serif;
+
+}
+.desc{
+ color: black;
+ font-size: 30px;
+ word-wrap: break-word;
+ margin-left: 14px;
+}
+.description {
+ color:#4A4444;
+ font-size: 100%;
+ font-family: 'Kollektif', sans-serif;
+ margin-top:18px
+
+}
+
+
+.time-container{
+width: 100%;
+}
+.time-images {
+ display: flex;
+flex-wrap: nowrap;
+
+}
+
+.time-image {
+ display: flex;
+flex-direction: column;
+width: 15%;
+height: 80%;
+margin-right: 10px;
+border-radius: 20%;
+border: 2px solid rgb(209, 208, 208) ;
+}
+.total select {
+  margin: 19px;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    height: 40px;
+    border-radius: 1 solid;
+    border: 0.5px solid rgb(0 0 0);
+}
+
+.time-image img {
+ width:80%;
+ height: 40px;
+ border-radius: 20%;
+ text-align: center;
+ margin-left: 10%;
+}
+
+.time-image p {
+ color:black ;
+ text-align: center;
+ margin-top: -15px;
+ font-size: 50%;
+}
+.time-image .titred {
+  color:black ;
+  text-align: center;
+  margin-top: -1px;
+  font-size: 65%;
+ }
+ .sup-images {
+ width: 100%;
+  overflow-x: auto;
+  position: relative;
+  display: flex;
+
+
+
+
+}
+.cadre:first-child {
+  margin-right: 10px;
+}
+
+.cadre:not(:first-child) {
+  margin-right: 10px;
+}
+
+.cadre {
+  border: 1px solid black;
+   position:relative;
+ width: 100px;
+ height: 87px;
+align-items: center;
+
+ border-radius: 10%;
+
+}
+.bloc .prec{
+  background-color: black;
+  color: beige;
+  border: transparent;
+}
+
+button{
+  background-color: transparent;
+  border: transparent;
+}
+
+.cadre img {
+  text-align: center;
+  width: 48%;
+  height: 52%;
+  margin-left: 20%;
+  border-radius: 26%;
+
+ }
+ .cadre .sup-text{
+  margin-left: 12%;
+  margin-top: -1%;
+  margin-right: 45%;
+  font-size: 14px !important;
+ }
+
+
+
+.cadre .sup {
+  position: absolute;
+  top: -5px;
+ right: -5px;
+  width: 17px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sup i {
+  font-size: 10px;
+  color: white;
+  text-align: center;
+}
+.cadre:hover{
+  border-color: #FCA850;
+
+}
+.cadre:hover i:before {
+  content: "\f068"; /* Code pour l'icône que vous souhaitez afficher */
+}
+.cadre:hover .sup{
+  background-color: #FCA850;
+}
+.prix{
+ color: #FCA850;
+    font-size: 131%;
+ font-family: 'Kollektif', sans-serif;
+ margin-top: 10%;
+}
+
+
+
+.total{
+ display: flex;
+ justify-content: space-between;
+ align-items: left;
+
+
+}
+#btn{
+
+  margin-bottom: 20%;
+  margin-left: 73%;
+  border-top-left-radius: 40%;
+  border-bottom-right-radius: 40%;
+  background-color: #000000;
+  border: solid 1px transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 100%;
+  width: 150px;
+  height: 40px;
+  opacity: 0.9;
+
+}
+.panier{
+ align-items: center;
+
+}
+i{
+ color:#ffffff;
+}
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  font-size: 18px;
+  border-radius: 5%;
+  margin-top: 5%;
+ }
+
+ .count-input {
+  width: 20px;
+  text-align: center;
+  border: none;
+ }
+
+ .minus-btn, .plus-btn {
+  width:20px;
+  border: none;
+  background-color: #cbcaca;
+  cursor: pointer;
+  border-radius:30%;
+ }
+
+ .minus-btn:hover, .plus-btn:hover {
+  background-color: #ccc;
+ }
+ .total{
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+ }
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 7%;
+  background-color: #000;
+  color: #fff;
+
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.logo
+ {
+  font-size: 100%;
+  margin-left: 15%;
+  margin-top: 3%;
+
+}
+.panier{
+  font-size: 100%;
+  margin-right: 15%;
+  margin-top: 3%;
+}
+.home{
+  font-size: 100%;
+  margin-right: 20%;
+}
+.circle {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10%;
+  height:100%;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.cercle2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background-color: rgb(10, 10, 10);
+}
+.cercle2 i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 100%;
+}

@@ -1,0 +1,48 @@
+
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+  <h1 class="h3 mb-0 text-gray-800">Modifier  Gerant</h1>
+</div>
+<!-- Content Row -->
+<form [formGroup]="userForm"  (ngSubmit)="onUpdate()" >
+  <div class="form-group" >
+    <label for="nom">Nom</label>
+    <input type="text" name="name" formControlName="name"  class="form-control"   >
+    <small *ngIf="userForm.controls['name'].errors && userForm.controls['name'].touched" class="text-danger">
+      {{userService.getErrorMessage('Nom', userForm.controls['name'].errors)}}
+    </small>
+  </div>
+  <div class="form-group">
+    <label for="nom">Prénom</label>
+    <input type="text" name="firstname" formControlName="firstname"   class="form-control"  >
+    <small *ngIf="userForm.controls['firstname'].errors && userForm.controls['firstname'].touched" class="text-danger">
+      {{userService.getErrorMessage('Prenom', userForm.controls['firstname'].errors)}}
+    </small>
+  </div>
+  <div class="form-group" >
+    <label for="phone">Telephone</label>
+    <input type="number" name="phone" formControlName="phone"   class="form-control">
+    <small *ngIf="userForm.controls['phone'].errors && userForm.controls['phone'].touched" class="text-danger">
+      {{userService.getErrorMessage('Telephone', userForm.controls['phone'].errors)}}
+    </small>
+  </div>
+  <div class="form-group"  >
+    <input  type="hidden" ngModel="Gerant"  formControlName="role"name="role" value="Gerant"  class="form-control" >
+  </div>
+  <div class="form-group" >
+    <label for="email">Email</label>
+    <input type="text" name="email"class="form-control" formControlName="email" aria-describedby="mail">
+    <small *ngIf="userForm.controls['email'].errors && userForm.controls['email'].touched" class="text-danger">
+      {{userService.getErrorMessage('Email', userForm.controls['email'].errors)}}
+    </small>
+  </div>
+  <div class="form-group" >
+    <label for="password">Mot de passe</label>
+    <input type="password" name="password"class="form-control"formControlName="password"   id="password" aria-describedby="password" >
+    <small *ngIf="userForm.controls['password'].errors && userForm.controls['password'].touched" class="text-danger">
+      {{userService.getErrorMessage('Mot de passe', userForm.controls['password'].errors)}}
+    </small>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Modifier </button>
+</form>
+

@@ -1,0 +1,12 @@
+<div class="categories-container">
+  <div class="category-images">
+
+     <a *ngFor="let data of categorys"   (click)="onCategoryClick(data._id)" >
+      <div class="category-image">
+        <img src="http://localhost:3000/images/{{data.image}}">
+        <p>{{data.name}}</p>
+      </div>
+    </a>
+</div>
+</div>
+

@@ -1,0 +1,12 @@
+.pagination > li > a,
+.pagination > li > span {
+  border-radius: 0 !important;
+  margin-right: 5px !important;
+  margin-left: 500px;
+}
+.pagination{
+  margin-left: 40%;
+}
+a{
+margin-right: 10px;
+}

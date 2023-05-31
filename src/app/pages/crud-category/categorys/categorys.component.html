@@ -1,0 +1,64 @@
+
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+  <h1 class="h3 mb-0 text-gray-800">Liste des Categories </h1>
+
+</div>
+<!-- Content Row -->
+<div class="container">
+<div class="bloc">
+<!--  <form class="d-flex" [formGroup]="categoryForm"  (submit)="search()">
+    <input class="form-control me-2" type="search" placeholder="recherche"  size="60px"formControlName="search" name="search" aria-label="recherche">
+    <button  class="btn btn-outline-success" type="submit">
+      <i class="ri-search-line"></i>
+    </button>
+  </form>
+  -->
+  <input class="form-control"id="search" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder=" Chercher un produit ">
+
+  <a class="btn btn-outline-primary" id="ajout" [routerLink]="['/admin','addcategorys']" >
+<i class="ri-add-box-fill"></i>
+  </a>
+</div>
+
+<div class="row row-cols-1">
+  <div class="col">
+  <table class="table table-bordered" data-toggle="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col" style="width:200px;"><button (click)="sort('name')"><i class="bi bi-sort-alpha-down"></i></button>Name</th>
+        <th scope="col"  (click)="sort('description')" style="width: 300px;"><button (click)="sort('description')"><i class="bi bi-sort-alpha-down"></i></button>Description</th>
+        <th scope="col"  (click)="sort('slug')" style="width: 150px;">Slug</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of categorys| paginate: config| filter:searchText; index as i; ">
+        <td>{{ i+1}}</td>
+        <td>{{ data.name }}</td>
+        <td>{{ data.description }}</td>
+        <td>{{ data.slug }}</td>
+        <td>
+          <a [routerLink]="['/admin','showcategory',data._id]"  routerLinkActive="router-link-active"  class="btn btn-outline-success">
+            <i class="ri-eye-line"></i>
+          </a>
+          <a  [routerLink]="['/admin','updatecategory',data._id]" class="btn btn-outline-warning" >
+
+          <i class="ri-edit-line"></i>
+          </a>
+
+          <button  (click)=" deleteCategory(data._id)" type="button" class="btn btn-outline-danger" >
+            <i class="ri-delete-bin-5-line" ></i>
+          </button>
+        </td>
+      </tr>
+
+    </tbody>
+
+  </table>
+</div>
+
+<div class="pagination">
+  <pagination-controls (pageChange)="config.currentPage = $event"></pagination-controls>
+  </div></div>
+</div>

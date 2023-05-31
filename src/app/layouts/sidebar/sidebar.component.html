@@ -1,0 +1,96 @@
+
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+  <!-- Sidebar - Brand -->
+  <a class="sidebar-brand d-flex align-items-center justify-content-center" routerLink="/dashboard">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-qr-code-scan" viewBox="0 0 16 16">
+      <path d="M0 .5A.5.5 0 0 1 .5 0h3a.5.5 0 0 1 0 1H1v2.5a.5.5 0 0 1-1 0v-3Zm12 0a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0V1h-2.5a.5.5 0 0 1-.5-.5ZM.5 12a.5.5 0 0 1 .5.5V15h2.5a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5Zm15 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H15v-2.5a.5.5 0 0 1 .5-.5ZM4 4h1v1H4V4Z"/>
+      <path d="M7 2H2v5h5V2ZM3 3h3v3H3V3Zm2 8H4v1h1v-1Z"/>
+      <path d="M7 9H2v5h5V9Zm-4 1h3v3H3v-3Zm8-6h1v1h-1V4Z"/>
+      <path d="M9 2h5v5H9V2Zm1 1v3h3V3h-3ZM8 8v2h1v1H8v1h2v-2h1v2h1v-1h2v-1h-3V8H8Zm2 2H9V9h1v1Zm4 2h-1v1h-2v1h3v-2Zm-4 2v-1H8v1h2Z"/>
+      <path d="M12 9h2V8h-2v1Z"/>
+    </svg>
+      <div class="sidebar-brand-text mx-3">E-menu</div>
+  </a>
+
+  <hr class="sidebar-divider my-0">
+<br>
+<div>
+  <img src="assets/user.png" alt="">
+  <h5>{{currentAdmin.name}}</h5>
+  <p>{{currentAdmin.role}}</p>
+</div>
+<hr class="sidebar-divider my-0">
+
+
+
+
+
+<li class="nav-item"  *ngIf="currentAdmin.role === 'Admin'">
+  <a class="nav-link" routerLink="gerants" routerLinkActive="active-link">
+    <i class="bi bi-person-lines-fill"></i>
+      <span>Gerant</span></a>
+</li>
+
+<li class="nav-item"  *ngIf="currentAdmin.role === 'Admin'">
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/admin" routerLinkActive="active-link">
+      <i class="bi bi-house-door"></i>
+        <span>Dashboard</span></a>
+</li>
+<li class="nav-item"  *ngIf="currentAdmin.role === 'Admin'">
+  <a class="nav-link" routerLink="allcart" routerLinkActive="active-link">
+    <i class="ri-file-list-line"></i>
+      <span>Commande</span></a>
+</li>
+<li class="nav-item"  *ngIf="currentAdmin.role === 'Admin'">
+  <a class="nav-link" routerLink="categorys" routerLinkActive="active-link">
+    <i class="ri-list-check"></i>
+      <span>Categories</span></a>
+</li>
+<li class="nav-item"  *ngIf="currentAdmin.role === 'SuperAdmin'">
+  <a class="nav-link" routerLink="admins" routerLinkActive="active-link">
+    <i class="bi bi-person-lines-fill"></i>
+      <span>Admin</span></a>
+</li>
+<li class="nav-item"  *ngIf="currentAdmin.role === 'Gerant'">
+  <a class="nav-link" routerLink="products" routerLinkActive="active-link">
+    <i class="ri-file-list-line"></i>
+      <span>Produits</span></a>
+</li>
+
+<li class="nav-item"  *ngIf="currentAdmin.role === 'Gerant'">
+  <a class="nav-link" routerLink="allcart" routerLinkActive="active-link">
+    <i class="ri-file-list-line"></i>
+      <span>Commande</span></a>
+</li>
+<li class="nav-item"  *ngIf="currentAdmin.role === 'Gerant'">
+  <a class="nav-link" routerLink="categorys" routerLinkActive="active-link">
+    <i class="ri-list-check"></i>
+      <span>Categories</span></a>
+</li>
+
+
+
+<hr class="sidebar-divider my-0">
+<li class="nav-item" *ngIf="currentAdmin.role === 'Admin'">
+  <a class="nav-link" [routerLink]="['/admin','updateprofile',currentAdmin.id]" routerLinkActive="active-link">
+    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+      <span>Profile</span></a>
+</li>
+<li class="nav-item" *ngIf="currentAdmin.role === 'SuperAdmin'">
+  <a class="nav-link" [routerLink]="['/admin','updateprofile',currentAdmin.id]" routerLinkActive="active-link">
+    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+      <span>Profile</span></a>
+</li>
+<li class="nav-item"  >
+  <button (click)="logout()">
+  <a class="nav-link" routerLinkActive="active-link">
+
+    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+    Déconnexion
+
+</a>
+</button>
+</li>
+</ul>

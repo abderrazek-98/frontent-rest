@@ -1,0 +1,26 @@
+.btn {
+  margin-left: 10px;
+}
+.table {
+  margin-top: 25px;
+}
+.bloc {
+  display: flex;
+  /* the default for span */
+}
+#ajout{
+  margin-left: 300px;
+}
+.pagination > li > a,
+.pagination > li > span {
+  border-radius: 0 !important;
+  margin-right: 5px !important;
+  margin-left: 500px;
+}
+.pagination{
+  margin-left: 40%;
+}
+button{
+  border-color: transparent;
+  background-color: transparent;
+}

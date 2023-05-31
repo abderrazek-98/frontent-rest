@@ -1,0 +1,32 @@
+hr{
+  color: rgb(239, 239, 239);
+}
+button {
+  background-color: transparent;
+  color: #eceeec;
+
+  border: 0px solid #fdfffd; /* Green */
+}
+img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  }
+h5{
+  text-align: center;
+  color: #fdfffd;
+}
+p{
+  text-align: center;
+  color:#d2d4d2;
+  size: 5px;
+}
+@media print {
+  ul * {
+    display: none;
+  }
+
+}

@@ -1,0 +1,46 @@
+.categories-container {
+  width: 124%;
+  overflow-x: auto;
+}
+
+.category-images {
+  display: flex;
+flex-wrap: nowrap;
+
+
+}
+a {
+  text-decoration: none;
+ color: black;
+}
+
+.category-image {
+  display: flex;
+flex-direction: column;
+width: auto;
+margin-right: 10px;
+
+}
+button{
+
+  background-color: transparent;
+  border: none;
+
+}
+button:hover{
+
+  color: #FCA850;
+  background-color: transparent;
+  filter: sepia(1);
+}
+.category-image img {
+  width: auto;
+  height: 80px;
+  border-radius: 10px;
+}
+
+.category-image p {
+  text-align: center;
+  margin-top: 5px;
+}
+

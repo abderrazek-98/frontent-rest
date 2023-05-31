@@ -1,0 +1,40 @@
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+  <h1 class="h3 mb-0 text-gray-800">Utilisateurs</h1>
+</div>
+<!-- Content Row -->
+<div class="container">
+  <div class="row row-cols-1">
+    <div class="col">
+  <table   class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Prénom</th>
+      <th scope="col">Telephone</th>
+      <th scope="col">Role</th>
+      <th scope="col"></th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of users ; index as i; ">
+      <td>{{  i+1}}</td>
+      <td>{{ data.name }}</td>
+      <td>{{ data.firstname }}</td>
+      <td>{{ data.phone }}</td>
+      <td>{{ data.role }}</td>
+      <td>
+        <button  (click)="DeleteUser(data._id)" type="button" class="btn btn-outline-danger" >Supprimer
+          <i class="ri-delete-bin-5-line"></i>
+             </button>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+</head>
+<body>
+
+
+   <div>
+    <div class="search">
+      <input #s type="text" placeholder="Chercher une categorie  !"
+       (keyup.enter)="search(s.value)"
+       [value]="searchTerm" />
+      <button (click)="search(s.value)" class="bi bi-search" id="searchbtn"></button>
+    </div>
+    <app-not-found
+    [visible]="!categorys || !categorys.length"
+    resetLinkText="Réinitialiser la recherche">
+    </app-not-found>
+    <div *ngFor="let data of categorys">
+	<div class="cadre"  >
+        <h2>{{data.name}}</h2>
+        <img src="http://localhost:3000/images/{{data.image}}" alt="Image de la catégorie">
+        <a  [routerLink]="['/category/',data._id]">  <button class="bouton">+</button></a>
+      </div>
+
+    </div>
+  </div>
+  <app-nav-footer></app-nav-footer>
+
+
+</body>
+</html>

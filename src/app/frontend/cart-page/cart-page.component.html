@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+    <title></title>
+</head>
+<body>
+
+    <div  class="background">
+        <div class="bloc">
+            <div class="retour">
+              <button (click)="goBack()" class="prec"> <i class="fa fa-arrow-left"></i>
+
+            </button>
+          </div>
+            <p class="products">Panier</p>
+
+        </div>
+    </div>
+<div>
+  <app-not-found
+  [visible]="!cart || !cart.items.length"
+  notFoundMessage="Panier vide !"
+  resetLinkText="Acceuil"
+></app-not-found>
+
+<div *ngIf="cart && cart.items.length" class="line">
+  <div class="numt">
+
+    <p class="numtable"> Ajouter Numéro table :</p>
+   <select id="table" [(ngModel)]="selectedTable" (change)="addTable(selectedTable)">
+     <option value="1">1</option>
+     <option value="2">2</option>
+     <option value="3">3</option>
+     <option value="4">4</option>
+     <option value="5">5</option>
+     <option value="6">6</option>
+     <option value="7">7</option>
+     <option value="8">8</option>
+     <option value="9">9</option>
+     <option value="10">10</option>
+     <option value="11">11</option>
+     <option value="12">12</option>
+     <option value="13">13</option>
+     <option value="14">14</option>
+     <option value="15">15</option>
+     <option value="16">16</option>
+     <option value="17">17</option>
+     <option value="18">18</option>
+     <option value="19">19</option>
+     <option value="20">20</option>
+   </select>
+   </div>
+    <div  *ngFor="let cartItem of cart.items">
+    <div id="cadre">
+
+      <img src="http://localhost:3000/images/{{cartItem.product.image}}" alt="">
+      <div class="titre_update">
+        <h6> {{cartItem.product.name}}</h6>
+        <div class="select">
+          <button class="remove-button" (click)="updateFromCart(cartItem)">
+            <i class="fa fa-pen"></i>
+            </button>
+            <button class="remove-button" (click)="removeFromCart(cartItem)">
+              <i class="fa fa-trash" ></i>
+          </button>
+
+        </div>
+    </div>
+        <p class="cat">{{cartItem.product.description}}</p>
+
+    <div class="total">
+        <div class="counter">
+            <button class="minus-btn" (click)="dec(cartItem)" (change)="changeQuantity(cartItem, cartItem.quantity)" >-</button>
+       <span > {{cartItem.quantity}}</span>
+            <button class="plus-btn" (click)="inc(cartItem)"  (change)="changeQuantity(cartItem, cartItem.quantity)">+</button>
+
+          </div>
+          <div class="prix"> {{cartItem.product.price}} Dt</div>
+        <div>
+    </div>
+</div>
+</div>
+</div>
+<p class="numtable" style="color: #f79227;">Ajouter Votre numméro de table  SVP</p>
+  <div class="checkout">
+    <div>
+      <div class="foods-count">{{cart.totalCount}}</div>
+      <div class="total-price">{{cart.totalPrice}} Dt</div>
+    </div>
+
+    <button class="btn" (click)="sendCart()" [disabled]="!isButtonActive">Commander </button>
+  </div>
+
+</div>
+
+  <app-nav-footer></app-nav-footer>
+
+
+

@@ -1,0 +1,54 @@
+img{
+  width: 20%;
+  height: 20%;
+  border-radius: 50%;
+}
+.name{
+  margin-left: 27%;
+  font-size: 235%;
+  margin-top: -12%;
+  margin-bottom: 1%;
+  color:black
+}
+.t{
+  margin-top: 5px;
+  margin-bottom: 1rem;
+  margin-left: 74%;
+  font-size: 150%;
+  color: red;
+  margin-bottom: 12%;
+}
+
+
+.somme{
+  margin-top: 1%;
+  margin-left: 75%;
+font-size: 130%;
+
+}
+
+.table{
+  border:0px solid #dadada;
+}
+td{
+  border:0px solid transparent;
+}
+
+.table tr{
+  border:1px solid #dadada;
+}
+.table2 tr{
+  border:0px solid #dadada;
+}
+.entet{
+  text-align: left;
+
+
+}
+.facture
+{
+  align-items: center;
+  text-align: center;
+  font-size: 50px;
+
+}

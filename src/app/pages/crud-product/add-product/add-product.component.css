@@ -1,0 +1,14 @@
+img{
+  height: 73px;
+  margin-top: 20px;
+}
+label{
+  margin-right: 30px;
+}
+.centre{
+
+  display: flex;
+    flex-wrap: wrap; /*Optionner - permet aux éléments de passer à la ligne en cas de besoin*/
+    justify-content: center;
+    margin-bottom: 20px;
+}

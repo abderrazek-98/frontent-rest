@@ -1,0 +1,35 @@
+<html>
+  <body>
+    <div id="container">
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <h1 class="card-header">Connecter </h1>
+          <div class="row">
+              <div class="col mb-3">
+                 <h6> <label class="form-label">Adresse mail :</label></h6>
+                  <input type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': email&& submitted && email.errors }" />
+                  <div *ngIf="email && email.touched && email.invalid" class="invalid-feedback">
+                      <div *ngIf="loginForm.getError('required', 'email')">Email is required</div>
+                      <div *ngIf="loginForm.getError('email', 'email')">Email must be a valid email address</div>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col mb-3">
+              <h6>  <label class="form-label">Mot de passe :</label></h6>
+                  <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid':password && submitted && password.errors }" />
+                  <div *ngIf="password&& password.touched && password.errors" class="invalid-feedback">
+                      <div *ngIf="loginForm.getError('required', 'password')">Password is required</div>
+                      <div *ngIf="loginForm.get('password')?.hasError('minlength')">Password must be at least 6 characters</div>
+                  </div>
+              </div>
+              <div class="text-center">
+              <button class="btn btn-primary me-2">Se connecter</button>
+              <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+          </div>
+          </div>
+      </form>
+  </div>
+
+</body>
+</html>

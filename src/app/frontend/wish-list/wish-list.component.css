@@ -1,0 +1,271 @@
+.background{
+  position:relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 7%;
+    background-color: #000;
+    color: #fff;
+
+
+}
+.bloc .prec{
+  background-color: black;
+  color: beige;
+  border: transparent;
+}
+.background .bloc{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: -4px;
+
+
+}
+
+
+.retour{
+  font-size: 1.5rem;
+    margin-top: 13px;
+ }
+
+
+
+.retour {
+  margin-right: auto;
+}
+.bloc .products{
+
+  margin-top: 1%;
+  margin-right: 41%;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  font-family: 'Kollektif', sans-serif;
+  font-weight: bold;
+}
+.bloc .search{
+  margin-top: 1%;
+  margin-right:-10% ;
+
+  color: white;
+  width: 100px;
+  height: 50px;
+}
+.retour,.search i{
+  font-size: 25px;
+  width: 100px;
+  height: 50px;
+}
+
+.cadre {
+
+  border: 2px solid black;
+  padding: 10px;
+  width: 80%;
+  height: 70%;
+  margin: 20px auto;
+ position: relative;
+  border-radius: 10%;
+  margin-left: 10%;
+  margin-top: 10%;
+  margin-bottom: 59px;
+}
+.titre_update{
+  display: flex;
+  justify-content: space-between;
+
+}
+h1{
+  text-align: center;
+  margin-bottom: 30px;
+}
+.select  {
+  display: flex;
+  justify-content: space-between;
+  width: 40px;
+}
+
+
+
+.ligne{
+  display: flex;
+   margin-top: 10%;
+}
+.cat{
+  margin-left: 25%;
+  margin-top: -5%;
+}
+.cadre h6{
+  margin-left: 25%;
+  margin-top: 1%;
+  font-family: 'Kollektif', sans-serif;
+  font-weight: bold;
+}
+.cadre p{
+  margin-left: 25%;
+  margin-top: 1%;
+  font-family: 'Kollektif', sans-serif;
+  font-size: 10px;
+
+}
+
+.cadre img {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 32%;
+  height: 78%;
+  border: 1px solid white;
+  box-shadow: 2px 2px 2px gray;
+  border-radius: 50%;
+}
+
+.favorite{
+  position: absolute;
+  top: 15%;
+  right: -5%;
+ transform: translate(-50%, -50%);
+ width: 16%;
+ height: 26%;
+ border-radius: 50%;
+ background-color: transparent;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+.favorite button{
+  background-color: transparent;
+  border-color: transparent;
+  color: #FCA850;
+}
+.fav{
+  color: #FCA850;
+  font-size: 2.5rem;
+}
+
+.favorite.not{
+  font-size: 60%;
+  color: #fff;
+  text-align: center;
+}
+.cook-time span{
+  margin-left: 37%;
+  font-size: 12px !important;
+}
+
+.fav i{
+  font-size: 60%;
+color: #fff;
+text-align: center;
+}
+
+h3{
+  margin-top: 2%;
+  font-family: 'Kollektif', sans-serif;
+  font-weight: bold;
+  margin-left: 37%;
+  font-size: 24px !important;
+
+}
+p{
+  font-family: 'Kollektif', sans-serif;
+
+  font-size: 15px;
+}
+.prix{
+  font-family: 'Kollektif', sans-serif;
+  color: #FCA850;
+  font-size: 20px;
+  margin-left: 38%;
+}
+ .btn{
+
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  /* border-radius: 20%; */
+  border-top-left-radius: 9%;
+  background-color: #000000;
+  color: white;
+  cursor: pointer;
+  font-size: 64%;
+  width: 26%;
+  height: 22%;
+}
+.cadre:hover {
+  border-color: #FCA850;
+}
+.cadre:hover .btn {
+  background-color: #FCA850;
+  }
+  .cadre:hover .fav{
+      background-color: #ffffff;
+      border-color: #FCA850;
+      }
+      .cadre:hover .fav i{
+          color: #FCA850;
+          }
+          footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 7%;
+            background-color: #000;
+            color: #fff;
+
+          }
+
+          nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+          }
+
+          .logo
+           {
+            font-size: 100%;
+            margin-left: 15%;
+            margin-top: 3%;
+
+          }
+          .panier{
+            font-size: 100%;
+            margin-right: 15%;
+            margin-top: 3%;
+          }
+          .home{
+            font-size: 100%;
+            margin-right: 20%;
+          }
+          .circle {
+            position: absolute;
+            top: 0%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10%;
+            height:100%;
+            border-radius: 50%;
+            background-color: #fff;
+          }
+          .cercle2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            height: 90%;
+            border-radius: 50%;
+            background-color: rgb(10, 10, 10);
+          }
+          .cercle2 i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 100%;
+          }
+

@@ -1,0 +1,188 @@
+.promotion{
+
+  border-bottom-left-radius: 10%;
+  border-bottom-right-radius: 10%;
+  width: 100%;
+  height: 213px;
+  top: -10px;
+  margin-left:10%;
+  margin-right: 10%;
+  margin-bottom: 14px;
+
+}
+h1{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+
+.product-list {
+  grid-template-columns: repeat(2,1fr);
+  display: inline-grid;
+  gap: 31px;
+  column-gap: 119px;
+  margin-top: 3%;
+  margin-bottom: 18%;
+}
+
+
+
+.cadre {
+  border: 2px solid black;
+  position: relative;
+  border-radius: 10%;
+  margin-left: 64%;
+  padding: 5px;
+  margin-bottom: 30%;
+  flex-direction: column;
+  width: 540%;
+
+}
+.col{
+  width: 50%;
+  height: 50%;
+
+}
+.ligne{
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+
+.cadre img {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 42%;
+  height: 68%;
+  border: 1px solid white;
+  box-shadow: 2px 2px 2px gray;
+  border-radius: 50%;
+}
+
+.favorite{
+  position: absolute;
+  top: 15%;
+  right: -5%;
+ transform: translate(-50%, -50%);
+ width: 16%;
+ height: 26%;
+ border-radius: 50%;
+ background-color: #FCA850;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+.favorite button{
+  background-color: transparent;
+  border-color: transparent;
+  color: white;
+}
+.fav{
+  color: #FCA850;
+  font-size: 2.5rem;
+}
+
+.favorite.not{
+  font-size: 60%;
+  color: #fff;
+  text-align: center;
+}
+.cook-time span{
+  margin-left: 37%;
+  font-size: 12px !important;
+}
+
+.fav i{
+  font-size: 60%;
+color: #fff;
+text-align: center;
+}
+
+h3{
+  margin-top: 12%;
+  font-family: 'Kollektif', sans-serif;
+  font-weight: bold;
+  margin-left: 37%;
+  font-size: 12px !important;
+}
+p{
+  font-family: 'Kollektif', sans-serif;
+
+  font-size: 15px;
+}
+.prix{
+  font-family: 'Kollektif', sans-serif;
+color:#FCA850;
+font-size: 21px;
+margin-left: 4%;
+}
+ .btn{
+
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  border-radius: 20%;
+  border-top-left-radius: 30%;
+  background-color: #000000;
+  color: white;
+  cursor: pointer;
+  font-size: 68%;
+  width: 52%;
+  height: 24%;
+}
+.cadre:hover {
+  border-color: #FCA850;
+}
+.cadre:hover .btn {
+  background-color: #FCA850;
+  }
+  .cadre:hover .fav{
+      background-color: #ffffff;
+      border-color: #FCA850;
+      }
+      .cadre:hover .fav i{
+          color: #FCA850;
+          }
+
+          div .search{
+            display: flex;
+            justify-content: center;
+            margin-top: 0rem;
+            margin-bottom: 2.5rem;
+            align-items: center;
+            margin-left: 15%;
+          }
+
+          input{
+            border-radius: 10rem 0 0 10rem;
+            border: none;
+            height: 3rem;
+            width: 20rem;
+            background-color: #f1f1f1;
+            padding: 1.2rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            outline: none;
+          }
+
+         #searchbtn{
+            color: grey;
+            height: 3rem;
+            width: 5rem;
+            font-size: 1rem;
+            border-radius: 0 10rem 10rem 0;
+            border: none;
+            background-color: #FCA850;
+            color: white;
+            opacity: 0.8;
+            outline: none;
+          }
+
+          div button:hover{
+            opacity: 1;
+            cursor: pointer;
+          }

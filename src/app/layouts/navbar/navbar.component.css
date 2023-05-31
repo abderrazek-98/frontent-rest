@@ -1,0 +1,11 @@
+button {
+  background-color: transparent;
+
+  border: 0px solid #fdfffd; /* Green */
+}
+@media print {
+  nav * {
+    display: none;
+  }
+ 
+}

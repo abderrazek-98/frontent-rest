@@ -1,0 +1,64 @@
+h1{
+  text-align: center;
+}
+html{
+  background-color: #e9e9e9;
+}
+ #container{
+  width:700px;
+  height: 700px;
+  margin:0 auto;
+  margin-top:10%;
+ }
+ /* Bordered form */
+ form {
+  width:100%;
+  padding: 30px;
+  border: 2px solid #f1f1f1;
+  background: #fafafa;
+ }
+ #container h1{
+  width: 70%;
+  margin: 0 auto;
+  padding-bottom: 10px;
+ }
+
+ /* Full-width inputs */
+ input[type=email], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+ }
+
+ /* Set a style for all buttons */
+ input[type=submit] {
+  background-color: #4b63ff;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+ }
+ input[type=submit]:hover {
+  background-color: white;
+  color: #4b63ff;
+  border: 1px solid #4b63ff;
+ }
+ .error{
+  background-color: #ff4d5c93;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+ }
+ .error-msg{
+  font-style: normal;
+  color: #f20216;
+
+ }

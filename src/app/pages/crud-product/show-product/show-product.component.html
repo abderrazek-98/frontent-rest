@@ -1,0 +1,44 @@
+<h1> Détail Produit  {{productData.name}}</h1>
+<br>
+  <div class="container">
+    <div class="row row-cols-2">
+      <div class="col">
+         <img src="http://localhost:3000/images/{{productData.image}}"  class="card-img-top" alt="{{productData.image}}">
+      </div>
+      <div class="col">
+        <p class="card-title"><h5>{{productData.name}}</h5>
+        <p class="card-text"> Description : {{productData.description}}</p>
+        <p class="card-text">Category : {{productData.category.name}}</p>
+
+        <p class="card-text">le prix de se plat est {{productData.price}}Dt</p>
+        <h3>  Les details : </h3>
+        <div *ngFor="let details of productData.details">
+        <div style="display:flex">
+          <div class="form-group col-4" style="display:flex">
+           <h6><label for="prix"> Time :</label></h6>{{details.time}}
+          </div>
+          <div class="form-group col-4" style="display:flex">
+          <h6><label for="prix"> Calories :</label></h6> {{details.calory}}
+          </div>
+          <div class="form-group col-5" style="display:flex">
+            <h6><label for="prix"> Cooking :</label></h6> {{details.cooking}}
+            </div>
+            </div>
+        </div>
+        <h3 *ngIf="productData.supplements.length>1">  Les suppléments : </h3>
+      <div *ngFor="let supplement of productData.supplements">
+
+      <div style="display:flex">
+        <div class="form-group col-5" style="display:flex">
+         <h6><label for="prix"> supplément :</label></h6>{{supplement.supplement}}
+        </div>
+        <div class="form-group col-5" style="display:flex">
+        <h6><label for="prix"> Prix :</label></h6> {{supplement.prix}}Dt
+
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </div>
+

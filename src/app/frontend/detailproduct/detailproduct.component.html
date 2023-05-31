@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+</head>
+<body>
+  <app-not-found
+  [visible]="!productData"
+  notFoundMessage="Food Not Found"
+  resetLinkText="Back To Homepage">
+  </app-not-found>
+   <div *ngIf="productData"><div class="background">
+<div class="bloc">
+  <div class="retour">
+    <button (click)="goBack()" class="prec"> <i class="fa fa-arrow-left"></i>
+  </button>
+</div>
+
+    <div class="fav">
+      <button (click)="addToWishlist(productData)">
+        <i class="fa fa-heart" ></i></button>
+    </div>
+</div>
+    <div class="nom">
+        <h3>{{productData.name}}</h3>
+    </div>
+   <img src="http://localhost:3000/images/{{productData.image}}" alt="">
+   </div>
+   <div class="detail">
+    <div class="description">
+    Description
+<p class="desc">{{productData.description}}</p>
+</div>
+    <div class="time-container">
+      <div *ngFor="let details of productData.details">
+
+            <div class="time-images">
+
+                <div class="time-image">
+                  <img src="assets/tme.jpg">
+                  <p class="titred">Temps</p>
+                  <p>{{details.time}}</p>
+                </div>
+
+                    <div class="time-image">
+                      <img src="assets/calory.jpg">
+                      <p class="titred">Calories</p>
+                  <p>{{details.calory}}</p>
+                    </div>
+
+                        <div class="time-image">
+                          <img src="assets/cooking.png">
+                          <p class="titred">Cuisson</p>
+                          <p>{{details.cooking}}</p>
+                        </div>
+                        </div>
+
+    </div>
+
+</div>
+<p class="description"> Choisir suppléments : </p>
+    <div class="sup-images">
+      <div *ngFor="let sup of productData.supplements">
+
+        <div class="cadre">
+         <div> <img src="/assets/frontend/sup.jpg"></div>
+          <div class="sup-text"> {{sup.supplement}}
+           {{sup.prix}} Dt</div>
+        <button class="sup" (click)="addToSuppPrice(sup)"> <i class="fa fa-plus" aria-hidden="true"></i></button>
+</div>
+      </div>
+</div>
+<div class="total">
+    <p class="prix">Prix Total : {{productData.price}}DT</p>
+    <div class="total">
+
+
+
+  </div>
+
+</div>
+<div class="panier">
+  <button id="btn" (click)="addToCart()"> Ajouter au panier</button>
+    <i class="fa fa-shopping-cart" ></i>
+</div>
+</div>
+<app-nav-footer></app-nav-footer>
+
