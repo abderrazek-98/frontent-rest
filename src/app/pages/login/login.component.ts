@@ -12,6 +12,7 @@ import { LoginModel } from 'src/app/models/LoginModel';
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   submitted = false;
+  msg:string;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -42,7 +43,7 @@ export class LoginComponent implements OnInit {
   onSubmit(): void {
     this.submitted = true;
     if (this.loginForm.invalid) {
-      return;
+      this.msg="verifier votre information";
     }
     let loginData: LoginModel = {
       email: this.loginForm.value.email,

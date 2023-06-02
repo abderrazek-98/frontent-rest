@@ -61,7 +61,7 @@
     </div>
 
 </div>
-<p class="description"> Choisir suppléments : </p>
+<p class="descriptio" *ngIf="productData.supplements.length>0"> Choisir suppléments : </p>
     <div class="sup-images">
       <div *ngFor="let sup of productData.supplements">
 

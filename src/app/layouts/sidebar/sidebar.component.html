@@ -53,7 +53,7 @@
     <i class="bi bi-person-lines-fill"></i>
       <span>Admin</span></a>
 </li>
-<li class="nav-item"  *ngIf="currentAdmin.role === 'Gerant'">
+<li class="nav-item"  *ngIf="currentAdmin.role === 'Gerant'||currentAdmin.role === 'Admin'">
   <a class="nav-link" routerLink="products" routerLinkActive="active-link">
     <i class="ri-file-list-line"></i>
       <span>Produits</span></a>

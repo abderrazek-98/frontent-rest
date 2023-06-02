@@ -80,7 +80,7 @@ this.cartLc.numtable=this.numt;
 this.cartService.setCartToLocalStorage()
 }
 sendCart() {
-
+  this.isButtonActive = false;
   this.http.post('http://localhost:3000/api/products/cart', this.cartLc)
   .subscribe(
     () => {
@@ -92,4 +92,5 @@ sendCart() {
     }
   );
 }
+
 }
