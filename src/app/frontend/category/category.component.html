@@ -22,7 +22,7 @@
     <div *ngFor="let data of categorys">
 	<div class="cadre"  >
         <h2>{{data.name}}</h2>
-        <img src="http://localhost:3000/images/{{data.image}}" alt="Image de la catégorie">
+        <img src="https://restauration.onrender.com/images/{{data.image}}" alt="Image de la catégorie">
         <a  [routerLink]="['/category/',data._id]">  <button class="bouton">+</button></a>
       </div>
 
