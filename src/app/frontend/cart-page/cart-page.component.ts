@@ -17,6 +17,7 @@ dateActuelle:Date;
 selectedTable:any;
 selectedOption:any;
 isButtonActive:any;
+message:any;
 numt:any;
 cartLc = JSON.parse(localStorage.getItem('Cart'));
 
@@ -31,6 +32,8 @@ constructor(private cartService:CartService,
 
 }
   ngOnInit():void{
+    this.cartService.getCartObservable().subscribe((cart) => {
+      this.cart = cart;})
   }
   inc(cartItem){
     if(cartItem.quantity != 5){
@@ -84,7 +87,9 @@ sendCart() {
   this.http.post('https://restauration.onrender.com/api/products/cart', this.cartLc)
   .subscribe(
     () => {
-      console.log('Panier envoyé avec succès');
+      this.message="Commande envoyé avec succès";
+     // console.log('Commande envoyé avec succès');
+
      },
     (error) => {
       console.error('Erreur lors de l\'envoi du panier :', error);
