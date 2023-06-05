@@ -35,17 +35,17 @@
           "configurations": {
             "production": {
               "budgets": [
+
                 {
                   "type": "initial",
                   "maximumError": "1mb",
                   "maximumWarning": "500kb"
                 }
-
               ],
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
+              "buildOptimizer": true,
               "optimization": false,
               "vendorChunk": true,
               "extractLicenses": false,
