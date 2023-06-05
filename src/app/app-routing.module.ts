@@ -39,7 +39,7 @@ const routes: Routes = [
  {path:'layout', component:LayoutsComponent},
  {path:'acceuil', component:ImageComponent},
  {path:'category', component:CategoryComponent},
-{path:'cart-page', component:CartPageComponent},
+ {path:'cart-page', component:CartPageComponent},
  {path:'category/:id', component:ProduitsComponent},
  {path:'detail/:id', component:DetailproductComponent},
  {path:'wishlist', component:WishListComponent},
