@@ -23,9 +23,9 @@ export class AddCategoryComponent implements OnInit{
  {}
   ngOnInit(): void {
     this.categoryForm = this.formBuilder.group({
-      name:this.formBuilder.control ('', [Validators.required, Validators.minLength(6), Validators.maxLength(15)]),
-      description: this.formBuilder.control ('', [Validators.required, Validators.minLength(10), Validators.maxLength(100)]),
-      slug: this.formBuilder.control ('', [Validators.required, Validators.minLength(6), Validators.maxLength(15)]),
+      name:this.formBuilder.control ('', [Validators.required, Validators.minLength(1), ]),
+      description: this.formBuilder.control ('', [Validators.required, Validators.minLength(1)]),
+      slug: this.formBuilder.control ('', [Validators.required, Validators.minLength(0)]),
     });
   }
 

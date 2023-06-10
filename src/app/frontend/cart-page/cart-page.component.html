@@ -29,7 +29,8 @@
   resetLinkText="Acceuil"
 ></app-not-found>
 
-<div *ngIf="cart && cart.items.length" class="line">
+<div *ngIf="cart && cart.items.length>0" class="line">
+
   <div class="numt">
 
     <p class="numtable"> Ajouter Numéro table :</p>
@@ -52,7 +53,12 @@
 
    </select>
    </div>
-    <div  *ngFor="let cartItem of cart.items">
+
+
+
+    <div  *ngFor=" let cartItem of cartItems;">
+
+
     <div id="cadre">
 
       <img src="https://restauration.onrender.com/images/{{cartItem.product.image}}" alt="">
@@ -92,8 +98,7 @@
 
     <button class="btn" (click)="sendCart()" [disabled]="!isButtonActive">Commander </button>
   </div>
- <span>{{message}}</span>
-{{cartLc.Date.hour}}
+
 </div>
 
   <app-nav-footer></app-nav-footer>

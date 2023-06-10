@@ -4,27 +4,32 @@ import { Cart } from 'src/app/models/Cart';
 import { CartItem } from 'src/app/models/CartItem';
 import { ProductModel } from 'src/app/models/ProductModel';
 import { CartService } from 'src/app/service/frontend/cart.service';
-import { Location } from '@angular/common';
+import { Location,CommonModule} from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'app-cart-page',
   templateUrl: './cart-page.component.html',
   styleUrls: ['./cart-page.component.css']
 })
 export class CartPageComponent implements OnInit {
-cart: any;
+cart: Cart;
+cartItems:CartItem[];
 dateActuelle:Date;
 selectedTable:any;
 selectedOption:any;
 isButtonActive:any;
 message:any;
 numt:any;
+
 cartLc = JSON.parse(localStorage.getItem('Cart'));
 
 constructor(private cartService:CartService,
   private http: HttpClient,private router: Router,private location: Location){
   this.cartService.getCartObservable().subscribe((cart) => {
     this.cart = cart;
+    this.cartItems=cart.items;
+  console.log( this.cartItems)
 
 
   })
