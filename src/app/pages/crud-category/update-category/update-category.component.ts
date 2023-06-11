@@ -22,9 +22,9 @@ export class UpdateCategoryComponent implements OnInit{
  }
  ngOnInit(): void {
   this.categoryForm = this.formBuilder.group({
-    name:this.formBuilder.control ('', [Validators.required, Validators.minLength(1), ]),
+    name:this.formBuilder.control ('', [Validators.required]),
     description: this.formBuilder.control ('', [Validators.required, Validators.minLength(1)]),
-    slug: this.formBuilder.control ('', [Validators.required, Validators.minLength(0)]), });
+    slug: this.formBuilder.control ('', [Validators.required]), });
   this.categoryService.getCategory(this.category_id).subscribe({
     next: (categoryData :CategoryModel)=>{
      console.log(categoryData);

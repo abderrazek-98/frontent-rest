@@ -32,7 +32,7 @@ h1{
   position: relative;
   border-radius: 10%;
   margin-left: 64%;
-  padding: 5px;
+  padding: -5px;
   margin-bottom: 30%;
   flex-direction: column;
   width: 540%;
@@ -103,10 +103,11 @@ text-align: center;
 }
 
 h3{
-  margin-top: 12%;
+  margin-top: 18%;
   font-family: 'Kollektif', sans-serif;
   font-weight: bold;
-  margin-left: 37%;
+  margin-left: 38%;
+
   font-size: 12px !important;
 }
 p{

@@ -52,17 +52,14 @@ export class ProductsService {
     getErrorMessage(fieldName:string, error:ValidationErrors):string{
       if(error['required']){
         //Le description de la catégorie est obligatoire.
-      return fieldName +  "  de la catégorie est obligatoire.";
+      return fieldName +  "  de produit est obligatoire.";
       } else
       if (error['minlength']){
        // Le description de la catégorie doit avoir au moins 6 caractères
-      return fieldName +  "   de la produit doit avoir au moins "+ error['minlength']['requiredLength']+"caractères.";
+      return fieldName +  "   de produit doit avoir au moins "+ error['minlength']['requiredLength']+"caractères.";
       }
       else
-      if (error['maxlength']){
-        //Le description de la catégorie ne peut pas dépasser 15 caractères.
-      return fieldName+  "   de la produit ne peut pas dépasser "+ error['maxlength']['requiredLength']+"caractères.";
-      }else
+
       if (error['min']){
         //Le description de la catégorie ne peut pas dépasser 15 caractères.
       return fieldName+  "   de la produit doit avoir au moins "+ error['min']['min'];

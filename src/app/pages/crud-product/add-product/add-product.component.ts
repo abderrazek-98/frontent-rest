@@ -26,8 +26,8 @@ export class AddProductComponent implements OnInit{
   ngOnInit(): void {
 
       this.productForm = this.formBuilder.group({
-        name:this.formBuilder.control ('', [Validators.required, Validators.minLength(1)]),
-        description:this.formBuilder.control ('', [Validators.required, Validators.minLength(1)]),
+        name:this.formBuilder.control ('', [Validators.required]),
+        description:this.formBuilder.control ('', [Validators.required]),
         image:this.formBuilder.control( '', [Validators.required]),
         category: this.formBuilder.control('',[Validators.required]),
         price: this.formBuilder.control (0, [Validators.required]),

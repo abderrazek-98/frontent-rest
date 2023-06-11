@@ -32,8 +32,8 @@ export class UpdateProductComponent implements OnInit{
   ngOnInit(): void {
 
       this.productForm = this.formBuilder.group({
-        name:this.formBuilder.control ('', [Validators.required, Validators.minLength(6), Validators.maxLength(15)]),
-        description:this.formBuilder.control ('', [Validators.required, Validators.minLength(10), Validators.maxLength(100)]),
+        name:this.formBuilder.control ('', [Validators.required]),
+        description:this.formBuilder.control ('', [Validators.required]),
         image:this.formBuilder.control( '', [Validators.required]),
         category: this.formBuilder.control('',[Validators.required]),
         price: this.formBuilder.control (0, [Validators.required]),
@@ -41,7 +41,7 @@ export class UpdateProductComponent implements OnInit{
         details:this.formBuilder.group({
           time: ['', Validators.required],
           calory: [0, Validators.required],
-          cooking: [0, Validators.required]
+          cooking: [0]
         })
       });
       this.categorysService.getCategorys().subscribe(categorys => {

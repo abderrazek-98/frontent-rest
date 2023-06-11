@@ -61,7 +61,8 @@
     </div>
 
 </div>
-<p class="descriptio" *ngIf="productData.supplements.length>0"> Choisir suppléments : </p>
+<div *ngIf="productData.supplements.length<0">
+<p class="description"> Choisir suppléments : </p>
     <div class="sup-images">
       <div *ngFor="let sup of productData.supplements">
 
@@ -72,6 +73,7 @@
         <button class="sup" (click)="addToSuppPrice(sup)"> <i class="fa fa-plus" aria-hidden="true"></i></button>
 </div>
       </div>
+    </div>
 </div>
 <div class="total">
     <p class="prix">Prix Total : {{productData.price}}DT</p>

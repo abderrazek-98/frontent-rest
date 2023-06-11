@@ -109,9 +109,9 @@ p{
   position: absolute;
 
   right: -1%;
-  top: 13%;
-  width: 30%;
-  height: 20%;
+  top: 16%;
+  width: 31%;
+  height: 17%;
   border-radius: 50%;
 }
 
@@ -125,7 +125,7 @@ p{
 }
 .desc{
  color: black;
- font-size: 30px;
+ font-size: 18px;
  word-wrap: break-word;
  margin-left: 14px;
 }
