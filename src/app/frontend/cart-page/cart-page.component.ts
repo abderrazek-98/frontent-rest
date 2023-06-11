@@ -6,7 +6,7 @@ import { ProductModel } from 'src/app/models/ProductModel';
 import { CartService } from 'src/app/service/frontend/cart.service';
 import { Location,CommonModule} from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-cart-page',
   templateUrl: './cart-page.component.html',
@@ -25,7 +25,7 @@ numt:any;
 cartLc = JSON.parse(localStorage.getItem('Cart'));
 
 constructor(private cartService:CartService,
-  private http: HttpClient,private router: Router,private location: Location){
+  private http: HttpClient,private router: Router,private location: Location,  private toastr:ToastrService){
   this.cartService.getCartObservable().subscribe((cart) => {
     this.cart = cart;
     this.cartItems=cart.items;
@@ -37,6 +37,7 @@ constructor(private cartService:CartService,
 
 }
   ngOnInit():void{
+    this.message='Ajouter Votre numméro de table  SVP';
     this.cartService.getCartObservable().subscribe((cart) => {
       this.cart = cart;})
   }
@@ -92,7 +93,7 @@ sendCart() {
   this.http.post('https://restauration.onrender.com/api/products/cart', this.cartLc)
   .subscribe(
     () => {
-      this.message="Commande envoyé avec succès";
+
      // console.log('Commande envoyé avec succès');
 
      },
@@ -101,6 +102,14 @@ sendCart() {
 
     }
   );
+  const dateObj = new Date(this.cartLc.date);
+const heure = dateObj.getHours();
+const minutes = dateObj.getMinutes();
+const secondes = dateObj.getSeconds();
+
+this.message =`Commande envoyé avec succès a  ${heure}h ${minutes}min ${secondes}s.`;
+
+  this.toastr.success('Notification', 'Commande envoyé avec succès');
 }
 
 }

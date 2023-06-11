@@ -18,7 +18,7 @@ export class AddCategoryComponent implements OnInit{
 
 
  constructor(private categoryService:CategorysService,
-  private toastr:ToastrService,
+  public toastr:ToastrService,
    private router: Router,private formBuilder: FormBuilder,)
  {}
   ngOnInit(): void {

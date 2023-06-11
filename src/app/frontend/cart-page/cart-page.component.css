@@ -76,10 +76,10 @@
 }
 #cadre img {
   position: absolute;
-  top: -20%;
-  left: -10%;
-  width: 34%;
-  height: 81%;
+  top: -13%;
+  left: -11%;
+  width: 88px;
+  height: 87px;
   border: 1px solid white;
   border-radius: 50%;
 }
