@@ -37,8 +37,10 @@ export class UpdateProductComponent implements OnInit{
         image:this.formBuilder.control( '', [Validators.required]),
         category: this.formBuilder.control('',[Validators.required]),
         price: this.formBuilder.control (0, [Validators.required]),
-       supplement:this.formBuilder.array([this.formBuilder.group({supplement:'',prix:''})]),
-        details:this.formBuilder.group({
+        supplementProduct:this.formBuilder.array([this.formBuilder.
+          group({supplement:'',prix:'',imageSupp:'',
+      })]),
+      details:this.formBuilder.group({
           time: ['', Validators.required],
           calory: [0, Validators.required],
           cooking: [0]
@@ -56,10 +58,6 @@ export class UpdateProductComponent implements OnInit{
         description:productData.description,
         price:productData.price,
 
-        image:productData.image,
-        category:productData.category,
-        supplement:productData.supplements,
-        details:productData.details
 
       })
 
@@ -95,7 +93,7 @@ export class UpdateProductComponent implements OnInit{
     formData.append('description', this.productForm.value.description);
     formData.append('category', this.productForm.value.category);
     formData.append('image', this.selectedFile);
-    formData.append('supplements', JSON.stringify(this.productForm.value.supplement));
+    formData.append('supplements', JSON.stringify(this.productForm.value.supplementProduct));
     formData.append('details', JSON.stringify(this.productForm.value.details));
 
     this.productService.updateProduct(this.product_id,formData).subscribe( {
@@ -111,21 +109,24 @@ export class UpdateProductComponent implements OnInit{
 
 
 
-  getSupplement(){
-    return (this.productForm.get('supplement') as FormArray).controls
+    getSupplement(){
+      return (this.productForm.get('supplementProduct') as FormArray).controls
+    }
+
+    addSupplementItem(){
+      console.log("add");
+
+      let items=this.productForm.get('supplementProduct') as FormArray;
+      items.push(this.formBuilder.group({supplement:'',prix:''}))
+    }
+  deleteSupplement(item){
+    if(this.getSupplement().length>0){
+      this.getSupplement().splice(item,1)
+    }
+  }
+  e_trackByFn(index,item){
+    return index
   }
 
-  addSupplementItem(){
-    let items=this.productForm.get('supplement') as FormArray;
-    items.push(this.formBuilder.group({supplment:'',prix:''}))
-  }
-deleteSupplement(item){
-  if(this.getSupplement().length>0){
-    this.getSupplement().splice(item,1)
-  }
-}
-e_trackByFn(index,item){
-  return index
-}
 
 }
