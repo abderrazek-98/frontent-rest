@@ -38,10 +38,10 @@ export class GereCartComponent  implements OnInit {
       showCancelButton:true
     }).then((result)=>{
       if(result.isConfirmed)
-      this.productsService.deleteCart(id).subscribe(result=>{
+      this.productsService.deleteCommande(id).subscribe(result=>{
         this.getAllCarts();
         if (result) {
-          this.toastr.success('Notification', 'Commande confimer avec succès');
+          this.toastr.success('Notification', 'Commande supprimer avec succès');
 
         }
       });

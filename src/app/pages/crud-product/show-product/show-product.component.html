@@ -25,17 +25,17 @@
             </div>
             </div>
         </div>
-        <h3 *ngIf="productData.supplements.length>=1">  Les suppléments : </h3>
-      <div *ngFor="let supplement of productData.supplements">
 
+      <div *ngFor="let supplement of productData.supplements">
+<div *ngIf="supplement.supplement.length>1">
       <div style="display:flex">
         <div class="form-group col-5" style="display:flex">
          <h6><label for="prix"> supplément :</label></h6>{{supplement.supplement}}
         </div>
         <div class="form-group col-5" style="display:flex">
         <h6><label for="prix"> Prix :</label></h6> {{supplement.prix}}Dt
+      </div>
 
-        </div>
       </div>
     </div>
 

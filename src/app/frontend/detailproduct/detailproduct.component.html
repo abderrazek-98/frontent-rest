@@ -61,17 +61,18 @@
     </div>
 
 </div>
-<div *ngIf="productData.supplements.length>0">
-<p class="description"> Choisir suppléments : </p>
+
+<p class="description">  </p>
     <div class="sup-images">
       <div *ngFor="let sup of productData.supplements">
-
+        <div *ngIf="sup.supplement.length>1">
         <div class="cadre">
          <div> <img src="/assets/frontend/sup.jpg"></div>
           <div class="sup-text"> {{sup.supplement}}
            {{sup.prix}} Dt</div>
         <button class="sup" (click)="addToSuppPrice(sup)"> <i class="fa fa-plus" aria-hidden="true"></i></button>
-</div>
+
+      </div>
       </div>
     </div>
 </div>

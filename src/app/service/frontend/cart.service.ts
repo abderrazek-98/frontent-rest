@@ -5,6 +5,7 @@ import { Cart } from 'src/app/models/Cart';
 import { CartItem } from 'src/app/models/CartItem';
 import { ProductModel } from 'src/app/models/ProductModel';
 import { v4 as uuidv4 } from 'uuid';
+import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -134,6 +135,17 @@ this.cart.date=new Date();
     const cartJson = localStorage.getItem('Cart');
     return cartJson ? JSON.parse(cartJson) : new Cart();
   }
+  getAllCart() {
+    return this.http.get<any[]>('https://restauration.onrender.com/api/products/allcart/');
+  }
 
-
+  getAllCartConfirmer()
+  {
+    return this.http.get<any[]>('https://restauration.onrender.com/api/products/allcartconfirmer/');
+  }
+  searchCartsByName(search: string): Observable<Cart[]> {
+    return this.http.get<any[]>('https://restauration.onrender.com/api/products/allcartconfirmer/').pipe(
+      map(carts => carts.filter(cart => cart.numtable))
+    );
+  }
 }

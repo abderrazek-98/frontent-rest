@@ -21,9 +21,11 @@ selectedOption:any;
 isButtonActive:any;
 message:any;
 numt:any;
-
+allcart:any[];
+cartAvecNumeroTable:any[];
+numeroTableExiste:any
 cartLc = JSON.parse(localStorage.getItem('Cart'));
-
+cartNonConf: any[] = [];
 constructor(private cartService:CartService,
   private http: HttpClient,private router: Router,private location: Location,  private toastr:ToastrService){
   this.cartService.getCartObservable().subscribe((cart) => {
@@ -83,11 +85,40 @@ addTable(selectedTable:any){
   } else {
     this.isButtonActive = false;
   }
-   this.numt =selectedTable;
-  console.log(this.numt);
-this.cartLc.numtable=this.numt;
-this.cartService.setCartToLocalStorage()
+
+  /*this.cartService.searchCartsByName(selectedTable)
+            .subscribe(cart => {
+              this.allcart = cart;
+            });
+if (this.allcart){
+  console.log('Le numéro de table existe dans au moins un panier !');
+  this.isButtonActive = false;
+  this.message="verifier votre numéro de table "
 }
+else
+{*/
+console.log(this.selectedTable);
+this.cartService.getAllCartConfirmer().subscribe(res => {
+  console.log(res)
+  this.cartAvecNumeroTable = res.find(cart => cart.numtable.toString() === this.selectedTable.toString());
+  if (this.cartAvecNumeroTable) {
+    console.log('Le numéro de table existe dans l\'un des paniers.');
+    this.message='Verifier votre numéro table';
+    this.isButtonActive = false;
+  } else {
+    console.log('Le numéro de table n\'existe pas dans les paniers.');
+    this.numt =selectedTable;
+  console.log(this.numt);
+  this.message="Votre numero table est correct ";
+this.cartLc.numtable=this.numt;
+this.isButtonActive = true;
+this.cartService.setCartToLocalStorage()
+  }
+});
+
+
+}
+
 sendCart() {
   this.isButtonActive = false;
   this.http.post('https://restauration.onrender.com/api/products/cart', this.cartLc)
@@ -110,6 +141,7 @@ const secondes = dateObj.getSeconds();
 this.message =`Commande envoyé avec succès a  ${heure}h ${minutes}min ${secondes}s.`;
 
   this.toastr.success('Notification', 'Commande envoyé avec succès');
+ // this.cartService.clearCart();
 }
 
 }

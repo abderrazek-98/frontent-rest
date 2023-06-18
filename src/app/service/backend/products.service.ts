@@ -8,6 +8,7 @@ import { ProductModel } from 'src/app/models/ProductModel';
 })
 export class ProductsService {
   constructor(private http: HttpClient) {
+    //https://restauration\.onrender\.com
 
     }
     getProductByName(data:string) {
@@ -43,6 +44,9 @@ export class ProductsService {
     }
     deleteCart(id: string) {
       return this.http.delete(`https://restauration.onrender.com/api/products/cart/${id}`);
+    }
+    deleteCommande(id: string) {
+      return this.http.delete(`https://restauration.onrender.com/api/products/cartdelete/${id}`);
     }
 
     updateProduct (product_id:string,product:FormData){
