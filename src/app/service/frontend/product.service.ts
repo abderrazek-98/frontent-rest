@@ -14,22 +14,22 @@ export class ProductService {
 
   }
   getProducts() {
-    return this.http.get<ProductModel[]>('https://restauration.onrender.com/api/products/product/');
+    return this.http.get<ProductModel[]>('http://localhost:3000/api/products/product/');
   }
   getProductscategory(data:string) {
-    return this.http.get<ProductModel[]>(`https://restauration.onrender.com/api/products/category/${data}`);
+    return this.http.get<ProductModel[]>(`http://localhost:3000/api/products/category/${data}`);
   }
 
   getProduct(id: string) {
-    return this.http.get<ProductModel>(`https://restauration.onrender.com/api/products/product/${id}`);
+    return this.http.get<ProductModel>(`http://localhost:3000/api/products/product/${id}`);
   }
   searchProductsByName(search: string): Observable<ProductModel[]> {
-    return this.http.get<ProductModel[]>('https://restauration.onrender.com/api/products/product/').pipe(
+    return this.http.get<ProductModel[]>('http://localhost:3000/api/products/product/').pipe(
       map(products => products.filter(product => product.name.toLowerCase().includes(search.toLowerCase())))
     );
 
 }
 getProductByName2(data:string) {
-  return this.http.get<ProductModel[]>(`https://restauration.onrender.com/api/products/productbyname/${data}`);
+  return this.http.get<ProductModel[]>(`http://localhost:3000/api/products/productbyname/${data}`);
 }
 }

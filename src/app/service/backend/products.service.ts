@@ -12,45 +12,45 @@ export class ProductsService {
 
     }
     getProductByName(data:string) {
-      return this.http.get<ProductModel[]>(`https://restauration.onrender.com/api/products/productbyname/${data}`);
+      return this.http.get<ProductModel[]>(`http://localhost:3000/api/products/productbyname/${data}`);
     }
     getProducts() {
-      return this.http.get<ProductModel[]>('https://restauration.onrender.com/api/products/product/');
+      return this.http.get<ProductModel[]>('http://localhost:3000/api/products/product/');
     }
     getAllCart() {
-      return this.http.get<any[]>('https://restauration.onrender.com/api/products/allcart/');
+      return this.http.get<any[]>('http://localhost:3000/api/products/allcart/');
     }
     getAllCartConfirmer()
     {
-      return this.http.get<any[]>('https://restauration.onrender.com/api/products/allcartconfirmer/');
+      return this.http.get<any[]>('http://localhost:3000/api/products/allcartconfirmer/');
     }
 
     getCartById(data:string) {
-      return this.http.get<any[]>(`https://restauration.onrender.com/api/products/cart/${data}`);
+      return this.http.get<any[]>(`http://localhost:3000/api/products/cart/${data}`);
     }
     getProductscategory(data:string) {
-      return this.http.get<ProductModel[]>(`https://restauration.onrender.com/api/products/category/${data}`);
+      return this.http.get<ProductModel[]>(`http://localhost:3000/api/products/category/${data}`);
     }
 
     getProduct(id: string) {
-      return this.http.get<ProductModel>(`https://restauration.onrender.com/api/products/product/${id}`);
+      return this.http.get<ProductModel>(`http://localhost:3000/api/products/product/${id}`);
     }
     addProduct(product: any) {
-      return this.http.post('https://restauration.onrender.com/api/products/addProduct', product);
+      return this.http.post('http://localhost:3000/api/products/addProduct', product);
     }
 
     deleteProduct(id: string) {
-      return this.http.delete(`https://restauration.onrender.com/api/products/product/${id}`);
+      return this.http.delete(`http://localhost:3000/api/products/product/${id}`);
     }
     deleteCart(id: string) {
-      return this.http.delete(`https://restauration.onrender.com/api/products/cart/${id}`);
+      return this.http.delete(`http://localhost:3000/api/products/cart/${id}`);
     }
     deleteCommande(id: string) {
-      return this.http.delete(`https://restauration.onrender.com/api/products/cartdelete/${id}`);
+      return this.http.delete(`http://localhost:3000/api/products/cartdelete/${id}`);
     }
 
     updateProduct (product_id:string,product:FormData){
-      return this.http.put<ProductModel>(`https://restauration.onrender.com/api/products/updateProduct/${product_id}`,product)
+      return this.http.put<ProductModel>(`http://localhost:3000/api/products/updateProduct/${product_id}`,product)
 
     }
     getErrorMessage(fieldName:string, error:ValidationErrors):string{

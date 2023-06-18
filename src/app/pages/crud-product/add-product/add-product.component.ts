@@ -31,8 +31,6 @@ export class AddProductComponent implements OnInit{
         image:this.formBuilder.control( '', [Validators.required]),
         category: this.formBuilder.control('',[Validators.required]),
         price: this.formBuilder.control (0, [Validators.required]),
-
-
         supplementProduct:this.formBuilder.array([this.formBuilder.group({supplement:'',prix:'',imageSupp:'',
        })]),
 
@@ -91,8 +89,8 @@ export class AddProductComponent implements OnInit{
 
 
 formData.append('details', JSON.stringify(product.details));
-    console.log(JSON.stringify(this.productForm.value.supplementProduct));
-    console.log(JSON.stringify(this.productForm.value.details));
+   // console.log(JSON.stringify(this.productForm.value.supplementProduct));
+  //  console.log(JSON.stringify(this.productForm.value.details));
     this.productService.addProduct(formData).subscribe( {
      next:(result:ProductModel)=>{
       this.toastr.success('Notification', 'Plat ajouté avec succès');
@@ -115,7 +113,7 @@ formData.append('details', JSON.stringify(product.details));
     console.log("add");
 
     let items=this.productForm.get('supplementProduct') as FormArray;
-    items.push(this.formBuilder.group({supplement:'',prix:'',imageSupp:''}))
+    items.push(this.formBuilder.group({supplement:'',prix:''}))
   }
 deleteSupplement(item){
   if(this.getSupplement().length>0){

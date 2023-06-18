@@ -31,8 +31,8 @@
     <div class="col" *ngFor="let datap of products; let i = index;">
 
       <div class="cadre">
-
-                <img src="https://restauration.onrender.com/images/{{datap.image}}" alt="Image" id="image">
+        
+                <img src="http://localhost:3000/images/{{datap.image}}" alt="Image" id="image">
               <div class="favorite">
                 <button (click)="addToWishlist(datap)">
                   <i class="fa fa-heart" ></i></button>
