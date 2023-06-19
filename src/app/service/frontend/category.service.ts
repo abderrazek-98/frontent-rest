@@ -14,19 +14,19 @@ export class CategoryService {
 
   }
   getCategorys() {
-    return this.http.get<CategoryModel[]>('http://localhost:3000/api/categorys/category');
+    return this.http.get<CategoryModel[]>('https://restauration.onrender.com/api/categorys/category');
   }
   getCategoryByName(data:string) {
-    return this.http.get<CategoryModel[]>(`http://localhost:3000/api/categorys/categorybyname/${data}`);
+    return this.http.get<CategoryModel[]>(`https://restauration.onrender.com/api/categorys/categorybyname/${data}`);
   }
   getProductscategory(id:any) {
-    return this.http.get<ProductModel[]>(`http://localhost:3000/api/products/category/${id}`);
+    return this.http.get<ProductModel[]>(`https://restauration.onrender.com/api/products/category/${id}`);
   }
   getCategory(id: string) {
-    return this.http.get<CategoryModel>(`http://localhost:3000/api/categorys/category/${id}`);
+    return this.http.get<CategoryModel>(`https://restauration.onrender.com/api/categorys/category/${id}`);
   }
   searchCatsByName(search: string): Observable<CategoryModel[]> {
-    return this.http.get<CategoryModel[]>('http://localhost:3000/api/categorys/category/').pipe(
+    return this.http.get<CategoryModel[]>('https://restauration.onrender.com/api/categorys/category/').pipe(
       map(cats => cats.filter(cat => cat.name.toLowerCase().includes(search.toLowerCase())))
     );
 

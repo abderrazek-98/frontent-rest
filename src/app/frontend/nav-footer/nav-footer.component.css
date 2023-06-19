@@ -44,11 +44,11 @@ nav {
 }
 .cercle2 {
   position: absolute;
-  top: 50%;
+  top: 57%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90%;
-  height: 90%;
+  width: 84%;
+  height: 75%;
   border-radius: 50%;
   background-color: rgb(10, 10, 10);
 }

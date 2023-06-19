@@ -9,32 +9,32 @@ import { ValidationErrors } from '@angular/forms';
 })
 export class UsersService {
 
-  baseUrl = 'http://localhost:3000/api/users/users';
+  baseUrl = 'https://restauration.onrender.com/api/users/users';
   users: any[] = [];
 
   constructor(private http: HttpClient) {
 
     }
     getUsers() {
-      return this.http.get<any[]>('http://localhost:3000/api/users/users');
+      return this.http.get<any[]>('https://restauration.onrender.com/api/users/users');
     }
     getUser(id: string) {
-      return this.http.get<UserModel>(`http://localhost:3000/api/users/users/${id}`);
+      return this.http.get<UserModel>(`https://restauration.onrender.com/api/users/users/${id}`);
     }
     getUsersAdmin(): Observable<any[]> {
       return this.http.get<any[]>(this.baseUrl);
     }
     deleteUser(id: string) {
-      return this.http.delete(`http://localhost:3000/api/users/users/${id}`);
+      return this.http.delete(`https://restauration.onrender.com/api/users/users/${id}`);
     }
     addUser(data: UserModel) {
-      return this.http.post('http://localhost:3000/api/users/user', data);
+      return this.http.post('https://restauration.onrender.com/api/users/user', data);
     }
     addCategory(data: UserModel) {
-      return this.http.post('http://localhost:3000/api/users/user', data);
+      return this.http.post('https://restauration.onrender.com/api/users/user', data);
     }
     updateUser(id:string,category:any){
-      return this.http.put<UserModel>(`http://localhost:3000/api/users/users/${id}`,category)
+      return this.http.put<UserModel>(`https://restauration.onrender.com/api/users/users/${id}`,category)
 
     }
     getErrorMessage(fieldName:string, error:ValidationErrors):string{

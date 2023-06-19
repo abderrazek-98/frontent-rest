@@ -8,33 +8,33 @@ import { ProductModel } from 'src/app/models/ProductModel';
 })
 export class CategorysService {
 
- // baseUrl = 'https://restauration\.onrender\.com/api/category/categorys http://localhost:3000';
+ // baseUrl = 'https://restauration.onrender.com/api/category/categorys https://restauration.onrender.com';
 
   constructor(private http: HttpClient) {
 
     }
     getCategorys() {
-      return this.http.get<CategoryModel[]>('https://restauration\.onrender\.com/api/categorys/category');
+      return this.http.get<CategoryModel[]>('https://restauration.onrender.com/api/categorys/category');
     }
     getCategoryByName(data:string) {
-      return this.http.get<CategoryModel[]>(`https://restauration\.onrender\.com/api/categorys/categorybyname/${data}`);
+      return this.http.get<CategoryModel[]>(`https://restauration.onrender.com/api/categorys/categorybyname/${data}`);
     }
     getProductscategory(data:string) {
-      return this.http.get<ProductModel[]>(`https://restauration\.onrender\.com/api/products/category/${data}`);
+      return this.http.get<ProductModel[]>(`https://restauration.onrender.com/api/products/category/${data}`);
     }
     getCategory(id: string) {
-      return this.http.get<CategoryModel>(`https://restauration\.onrender\.com/api/categorys/category/${id}`);
+      return this.http.get<CategoryModel>(`https://restauration.onrender.com/api/categorys/category/${id}`);
     }
     addCategory(data: any) {
-      return this.http.post('https://restauration\.onrender\.com/api/categorys/addcategory', data);
+      return this.http.post('https://restauration.onrender.com/api/categorys/addcategory', data);
     }
 
     deleteCategory(id: string) {
-      return this.http.delete(`https://restauration\.onrender\.com/api/categorys/category/${id}`);
+      return this.http.delete(`https://restauration.onrender.com/api/categorys/category/${id}`);
     }
 
     updateCategory (id:string,data:any){
-      return this.http.put<CategoryModel>(`https://restauration\.onrender\.com/api/categorys/updatecategory/${id}`,data)
+      return this.http.put<CategoryModel>(`https://restauration.onrender.com/api/categorys/updatecategory/${id}`,data)
     }
 
 }
