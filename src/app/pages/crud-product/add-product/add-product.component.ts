@@ -28,6 +28,7 @@ export class AddProductComponent implements OnInit{
       this.productForm = this.formBuilder.group({
         name:this.formBuilder.control ('', [Validators.required]),
         description:this.formBuilder.control ('', [Validators.required]),
+        comment:this.formBuilder.control (''),
         image:this.formBuilder.control( '', [Validators.required]),
         category: this.formBuilder.control('',[Validators.required]),
         price: this.formBuilder.control (0, [Validators.required]),
@@ -80,7 +81,7 @@ export class AddProductComponent implements OnInit{
     const formData = new FormData();
     formData.append('name', this.productForm.value.name);
     formData.append('price', this.productForm.value.price);
-
+    formData.append('comment', this.productForm.value.comment);
     formData.append('description', this.productForm.value.description);
     formData.append('category', this.productForm.value.category);
     formData.append('image', this.selectedFile);
